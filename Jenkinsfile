@@ -1,6 +1,6 @@
 node{
       def dockerImageName= 'moin2811/javademoapp_$JOB_NAME:$BUILD_NUMBER'
-      def mvnHome = /opt/maven
+      def mvnHome = '/opt/maven'
       stage('SCM Checkout'){
          git 'https://github.com/Moin2811/java-groovy-docker'
       }
