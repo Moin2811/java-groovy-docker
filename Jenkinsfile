@@ -1,5 +1,5 @@
 node{
-      def dockerImageName= 'moin2811/javademoapp_$JOB_NAME:$BUILD_NUMBER'
+      def dockerImageName= 'Moin2811/javademoapp_$JOB_NAME:$BUILD_NUMBER'
       def mvnHome = '/opt/maven'
       stage('SCM Checkout'){
          git 'https://github.com/Moin2811/java-groovy-docker'
@@ -21,7 +21,7 @@ node{
    
       stage('Publish Docker Image'){
          withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerPWD')]) {
-              sh "docker login -u moin2811 -p ${dockerPWD}"
+              sh "docker login -u Moin2811 -p ${dockerPWD}"
          }
         sh "docker push ${dockerImageName}"
       }
